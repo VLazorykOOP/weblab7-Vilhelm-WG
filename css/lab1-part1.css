@@ -216,6 +216,58 @@ strike {
     }
 }
 
+/* ====================== БЛОК ПОВІДОМЛЕНЬ ПОДІЙ ====================== */
+#message-box {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #1a1a1a;
+    border: 2px solid #FFD700;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 350px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10000;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.message-item {
+    margin: 8px 0;
+    padding: 8px 10px;
+    background-color: #002057;
+    border-left: 3px solid #00FFFF;
+    color: #FFF5EE;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.message-item:hover {
+    background-color: #003080;
+    border-left-color: #FFD700;
+}
+
+/* Скролбар для блока повідомлень */
+#message-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#message-box::-webkit-scrollbar-track {
+    background: #002057;
+}
+
+#message-box::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
+}
+
+#message-box::-webkit-scrollbar-thumb:hover {
+    background: #FFC700;
+}
+
 /* ====================== АНІМАЦІЇ ====================== */
 @keyframes highlightText {
     0% { background-position: -100% 0; }
