@@ -1,0 +1,273 @@
+/* ====================== ЗАГАЛЬНІ СТИЛІ ====================== */
+
+/* Універсальний селектор */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Селектор класу */
+.info {
+    font-style: italic;
+    font-size: 1.1em;
+    padding-left: 10px;
+    border-left: 3px solid #8B008B;
+}
+
+/* Селектор сусідів */
+h2 + pre {
+    background-color: #f9f9f9;
+    border-left: 5px double #ccc;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+/* Селектор дітей */
+nav > ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Селектор атрибутів [attr] */
+[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+/* Селектор атрибутів [attr*=value] */
+[lang*="uk"] {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Селектор атрибутів [attr=value] */
+[alt="Крем для обличчя PureSkin"] {
+    border: 2px solid #8B008B;
+}
+
+/* ====================== ПСЕВДОКЛАСИ ====================== */
+
+/* :first-child */
+nav ul li:first-child a {
+    color: #006400;
+}
+
+/* :last-child */
+nav ul li:last-child a {
+    color: #B22222;
+}
+
+/* :active */
+a:active {
+    color: red;
+}
+
+/* :link */
+a:link {
+    text-decoration: none;
+}
+
+/* :empty */
+p:empty {
+    background-color: #eee;
+    min-height: 20px;
+}
+
+/* :not(selector) */
+p:not(.info) {
+    color: #333;
+}
+
+/* :checked — для чекбоксів, якщо додати */
+input[type="checkbox"]:checked {
+    outline: 2px solid green;
+}
+
+/* ====================== ПСЕВДОЕЛЕМЕНТИ ====================== */
+
+p::first-line {
+    color: #800000;
+}
+
+p::first-letter {
+    font-size: 150%;
+    color: #FF4500;
+}
+
+/* ====================== ЗАГОЛОВКИ ====================== */
+h1 {
+    color: #8B008B;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(to right, transparent, rgba(139, 0, 139, 0.1), transparent);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #8B008B;
+    margin: 25px 0 20px;
+    padding: 15px;
+    border-bottom: 2px solid #FF69B4;
+    font-size: 1.8em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #8B008B;
+}
+
+/* ====================== НАВІГАЦІЯ ====================== */
+nav {
+    background-color: #8B008B;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFF;
+    color: #8B008B;
+}
+
+/* ====================== ОСНОВНИЙ КОНТЕНТ ====================== */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    line-height: 1.6;
+    background-color: #FFF5EE;
+    color: #333;
+    padding: 0 20px;
+}
+
+.info {
+    background-color: #F8F4FF;
+    border-left: 4px solid #8B008B;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+pre.products {
+    background-color: #FFF;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 4px solid #8B008B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Consolas', monospace;
+    line-height: 1.8;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 15px;
+    object-fit: cover;
+}
+
+img:hover {
+    transform: translateY(-5px);
+}
+
+/* ====================== ФОН І КОЛЬОРИ ====================== */
+
+body {
+    color: #000;
+    background-color: #FFF5EE;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    background-attachment: scroll;
+    background-position: top;
+}
+
+/* ====================== СПЕЦІАЛЬНІ ЕЛЕМЕНТИ ====================== */
+.brand, .producer, .expiry, .price {
+    color: #8B008B;
+    font-weight: bold;
+}
+
+#contacts {
+    background-color: #F8F4FF;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 3px solid #8B008B;
+    text-align: center;
+    line-height: 2;
+}
+
+abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted #8B008B;
+    cursor: help;
+}
+
+/* ====================== АДАПТИВНИЙ ДИЗАЙН ====================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    pre.products {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* ====================== АНІМАЦІЇ ====================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.info, pre.products, img, #contacts {
+    animation: fadeIn 0.6s ease-out forwards;
+}

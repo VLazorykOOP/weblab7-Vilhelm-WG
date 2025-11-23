@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Форма введення інформації про товари фірми</title>
+	<link rel="stylesheet" href="css/input-forms.css">
+</head>
+<body>
+
+	<h1>Форма введення інформації про товари фірми</h1>
+	<p class="hint">Ця сторінка демонструє різні теги і атрибути форм (локальна валідація, без відправки на сервер).</p>
+
+	<!-- Основна форма: використовує novalidate (щоб показати власну перевірку JS) -->
+	<form id="productForm" action="#" dir="ltr" enctype="multipart/form-data" novalidate>
+
+		<fieldset>
+			<legend id="legend-main" class="legend-class" title="Інформація про товар">Інформація про товар</legend>
+
+			<div class="row">
+				<div class="col">
+					<label id="label-name" for="productName" class="lbl">Назва товару</label>
+					<input id="productName" name="productName" type="text" required title="Введіть назву" placeholder="Наприклад: Еко-чай " />
+				</div>
+
+				<div class="col">
+					<label id="label-code" for="productCode">Код товару (формат: ABC-123)</label>
+					<input id="productCode" name="productCode" type="text" pattern="[A-Z]{3}-\d{3}" required title="Три великі літери, дефіс, три цифри" placeholder="AAA-000" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<label for="price">Ціна (UAH)</label>
+					<input id="price" name="price" type="number" required step="0.01" max="100000" title="Число у гривнях" value="199.99" />
+				</div>
+
+				<div class="col">
+					<label for="quantity">Кількість</label>
+					<input id="quantity" name="quantity" type="number" required step="1" min="1" max="1000" value="1" />
+				</div>
+
+				<div class="col">
+					<label for="color">Колір упаковки</label>
+					<input id="color" name="color" type="color" value="#1e90ff" title="Виберіть колір" />
+				</div>
+			</div>
+
+			<p>
+				<label for="warrantyMonth">Гарантійний місяць (type="month")</label>
+				<input id="warrantyMonth" name="warrantyMonth" type="month" />
+			</p>
+
+			<p>
+				<label for="tel">Телефон виробника</label>
+				<input id="tel" name="tel" type="tel" pattern="\\+?\d{7,15}" required title="Наприклад: +380501112233" placeholder="+380501112233" />
+			</p>
+
+			<p>
+				<label for="search">Пошук по каталогу (type="search")</label>
+				<input id="search" name="search" type="search" placeholder="Пошук товару..." />
+			</p>
+
+			<p>
+				<label for="release">Дата й час надходження (type="datetime-local")</label>
+				<input id="release" name="release" type="datetime-local" />
+			</p>
+
+			<p>
+				<label for="password">Пароль адміністратора (type="password")</label>
+				<input id="password" name="password" type="password" required minlength="6" />
+			</p>
+
+			<p>
+				<label for="productImage">Зображення товару (type="file")</label>
+				<input id="productImage" name="productImage" type="file" accept="image/*" />
+			</p>
+
+			<p>
+				<label for="imgButton">Надіслати зображення (type="image")</label>
+				<!-- input type=image демонструє атрибут alt та height/width -->
+				<input id="imgButton" name="imgButton" type="image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Відправити зображення" height="32" width="32" />
+			</p>
+
+		</fieldset>
+
+		<fieldset>
+			<legend class="legend-class" id="legend-details" title="Додаткові відомості">Додаткові відомості</legend>
+
+			<p>
+				<label for="category">Категорія</label>
+				<input id="category" name="category" list="categories" placeholder="Оберіть або введіть..." />
+				<datalist id="categories" dir="ltr" lang="uk">
+					<option value="Напої"></option>
+					<option value="Їжа"></option>
+					<option value="Косметика"></option>
+					<option value="Електроніка"></option>
+				</datalist>
+			</p>
+
+			<p>
+				<label for="description">Опис товару</label>
+				<textarea id="description" name="description" placeholder="Короткий опис товару..." wrap="soft" required title="Напишіть опис" rows="4"></textarea>
+			</p>
+
+			<p>
+				<label for="selectSupplier">Постачальник</label>
+				<select id="selectSupplier" name="selectSupplier">
+					<optgroup id="group-local" lang="uk" title="Локальні постачальники" label="Локальні">
+						<option value="UA-1">UA-1</option>
+						<option value="UA-2">UA-2</option>
+					</optgroup>
+					<optgroup id="group-intl" lang="en" title="International suppliers" label="International">
+						<option value="INT-1">INT-1</option>
+					</optgroup>
+				</select>
+			</p>
+
+			<details open title="Деталі постачання" style="padding:8px;background:#fff;border:1px solid #eee;border-radius:6px">
+				<summary>Показати / приховати додаткові дані</summary>
+				<p>Тут можна розмістити додаткові відомості про постачання або опис упаковки.</p>
+			</details>
+
+			<!-- Вставимо застарілий елемент keygen для демонстрації атрибутів (deprecated у сучасних браузерах) -->
+			<p>
+				<label for="keygen">Ключова пара (keygen)</label>
+				<keygen id="keygen" name="deviceKey" title="Генерація ключа" style="display:block;margin-top:6px" disabled></keygen>
+			</p>
+
+		</fieldset>
+
+		<fieldset>
+			<legend id="legend-calc" title="Обчислення вартості">Розрахунок вартості</legend>
+			<p>Разом до оплати: <output id="total" name="total" for="price quantity" title="Загальна сума" lang="uk" class="total-output">0.00</output> UAH</p>
+		</fieldset>
+
+		<p class="error" id="formErrors" aria-live="polite"></p>
+
+		<p>
+			<!-- Кнопка типу submit з атрибутами formanction/formmethod/formtarget/formenctype -->
+			<input type="submit" value="Відправити інформацію" formmethod="post" formaction="#" formtarget="_self" formenctype="multipart/form-data" />
+
+			<!-- Кнопка reset -->
+			<input type="reset" value="Скинути форму" />
+
+			<!-- Кнопка з атрибутом autofocus і formtarget -->
+			<button type="button" name="preview" autofocus formenctype="multipart/form-data" formtarget="_blank">Попередній перегляд</button>
+		</p>
+
+	</form>
+
+	<script>
+		// Коротка клієнтська валідація (оскільки у формі є novalidate)
+		(function(){
+			const form = document.getElementById('productForm');
+			const price = document.getElementById('price');
+			const qty = document.getElementById('quantity');
+			const total = document.getElementById('total');
+			const errors = document.getElementById('formErrors');
+
+			function computeTotal(){
+				const p = parseFloat(price.value) || 0;
+				const q = parseInt(qty.value) || 0;
+				total.textContent = (p * q).toFixed(2);
+			}
+
+			// Recalculate when price or quantity change
+			price.addEventListener('input', computeTotal);
+			qty.addEventListener('input', computeTotal);
+			computeTotal();
+
+			function showErrors(list){
+				if(!list.length){ errors.textContent = ''; return; }
+				errors.innerHTML = list.map((s, i) => (i+1)+'. '+s).join(' \n');
+			}
+
+			form.addEventListener('submit', function(e){
+				e.preventDefault();
+				const messages = [];
+
+				// Required fields
+				['productName','productCode','price','quantity','password','description','tel'].forEach(id=>{
+					const el = document.getElementById(id);
+					if(el && el.hasAttribute('required') && !el.value.trim()){
+						messages.push(el.title || ('Поле '+(el.name||id)+' обов\'язкове'));
+					}
+				});
+
+				// Pattern validation for product code and tel
+				const code = document.getElementById('productCode');
+				if(code && code.value && !new RegExp(code.getAttribute('pattern')).test(code.value)){
+					messages.push('Код товару має бути у форматі AAA-000');
+				}
+
+				const tel = document.getElementById('tel');
+				if(tel && tel.value && !new RegExp(tel.getAttribute('pattern')).test(tel.value)){
+					messages.push('Телефон має бути у міжнародному форматі, наприклад +380501112233');
+				}
+
+				const pass = document.getElementById('password');
+				if(pass && pass.value.length > 0 && pass.value.length < 6){
+					messages.push('Пароль повинен містити принаймні 6 символів');
+				}
+
+				// Price/quantity checks
+				if(parseFloat(price.value) <= 0) messages.push('Ціна має бути більше нуля');
+				if(parseInt(qty.value) <= 0) messages.push('Кількість має бути більше нуля');
+
+				if(messages.length){
+					showErrors(messages);
+					// Focus first invalid field
+					const first = document.querySelector('.error, input:invalid, textarea:invalid') || document.getElementById('productName');
+					if(first) first.focus();
+					return false;
+				}
+
+				// Якщо все валідно — показати зведення (не відправляємо на сервер)
+				showErrors([]);
+				alert('Форма пройшла перевірку\n\nНазва: '+document.getElementById('productName').value+'\nЗагальна сума: '+total.textContent+' UAH');
+				return false;
+			});
+		})();
+	</script>
+
+</body>
+</html>
+

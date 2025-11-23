@@ -1,0 +1,64 @@
+/* Styles for input-forms.html — adapted from company-info.css palette */
+:root{
+  --primary-bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --accent-color: #FFD700;
+  --muted: #67737a;
+  --border: rgba(0,0,0,0.06);
+  --focus: rgba(34, 150, 243, 0.12);
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  margin:0;padding:24px;background:linear-gradient(180deg,var(--primary-bg),#e9f0f7);color:#222;
+}
+
+form{
+  max-width:980px;margin:0 auto;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:22px;box-shadow:0 6px 20px rgba(50,60,70,0.06);
+}
+
+fieldset{border:0;margin:0 0 16px;padding:0}
+legend{font-weight:700;color:var(--accent-color);margin-bottom:10px}
+
+label{display:block;margin:8px 0 6px;font-size:0.95rem;color:#16324f}
+input[type="text"],input[type="number"],input[type="tel"],input[type="search"],input[type="datetime-local"],input[type="month"],input[type="password"],textarea,select{
+  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:#fbfdff;font-size:0.96rem;color:#10222f;transition:box-shadow .18s,border-color .18s
+}
+
+input[type="color"]{padding:4px;height:40px;border-radius:6px;border:1px solid var(--border)}
+input[type="file"]{padding:6px}
+
+input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 4px var(--focus);border-color:rgba(34,150,243,0.5)}
+
+.row{display:flex;gap:12px}
+.col{flex:1}
+
+/* Buttons */
+input[type="submit"],input[type="reset"],button{
+  display:inline-block;padding:10px 14px;border-radius:8px;border:0;background:var(--accent-color);color:#10222f;font-weight:700;cursor:pointer;margin-right:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06)
+}
+
+input[type="reset"]{background:#e4e7ea;color:#16324f}
+button[type="button"]{background:#fff;border:1px solid var(--border);color:#16324f}
+
+.error{color:#a00;margin-top:8px}
+output{display:inline-block;padding:6px 10px;border-radius:6px;background:#fff;border:1px solid var(--border);font-weight:700}
+
+details{margin-top:10px}
+details[open]{background:#fbfdff;padding:12px;border-radius:8px;border:1px solid var(--border)}
+
+/* Small form help */
+.hint{color:var(--muted);margin-bottom:12px}
+
+/* Image input small tweak */
+input[type="image"]{vertical-align:middle;border-radius:6px;border:1px solid var(--border);background:#fff}
+
+@media (max-width:800px){
+  .row{flex-direction:column}
+  body{padding:16px}
+  form{padding:16px}
+}
+
+/* minor accessibility tweaks */
+label[aria-hidden="true"]{opacity:0}

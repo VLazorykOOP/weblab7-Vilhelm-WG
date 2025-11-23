@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Складна Таблиця</title>
+    <style>
+        /* Стилі для таблиці, щоб вона виглядала як на зображенні */
+        table {
+            border-collapse: collapse; /* Прибирає подвійні рамки */
+            width: 90%; /* Загальна ширина */
+            margin: 20px auto;
+            table-layout: fixed; /* Фіксована ширина стовпців */
+        }
+
+        /* Стилі для всіх комірок */
+        td {
+            border: 2px solid white; /* Чорна рамка */
+            height: 40px; /* Висота комірки */
+            padding: 0; /* Прибираємо внутрішні відступи */
+            /* Показує рамки навіть у порожніх комірках */
+            empty-cells: show; 
+        }
+
+        /* Встановлюємо відносну ширину для кожного з 9 стовпців */
+        .col1{width: 4%; } .col9 { width: 20%; } /* Широкі бічні стовпці */
+        .col3 { width: 10%; }
+        .col2 { width: 25%; }
+        .col7 { width: 4%; }
+        .col8 { width: 20%; } /* Широкий пустий стовпець */
+        
+        /* 6 стовпців у центрі, кожен по 8.33% */
+        .col-grid { width: 8; } 
+    </style>
+</head>
+<body bgcolor=#002057 text=#FFD700>
+
+    <h1>Приклад складної таблиці</h1>
+
+    <table>
+        <colgroup>
+            <col class="col1">
+            <col class="col2">
+            <col class="col3">
+            <col class="col-grid">
+            <col class="col-grid">
+            <col class="col-grid">
+            <col class="col-grid">
+            <col class="col7">
+            <col class="col8">
+            <col class="col9">
+        </colgroup>
+
+        <tr>
+            <td rowspan="3">&nbsp;</td>
+            <td colspan="6">&nbsp;</td>
+            <td rowspan="3">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">&nbsp;</td>
+            <td colspan="5">&nbsp;</td> 
+            <td rowspan="2">&nbsp;</td>
+            <td rowspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+                <tr>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+                <tr>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

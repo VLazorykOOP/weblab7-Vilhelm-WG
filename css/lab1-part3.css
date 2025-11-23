@@ -1,0 +1,323 @@
+/* ====================== ЗАГАЛЬНІ СТИЛІ ====================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Селектор класу */
+.news-section {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 20px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Селектор сусідів */
+h1 + section {
+    margin-top: 15px;
+}
+
+/* Селектор дітей */
+nav > ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Селектор атрибутів [attr] */
+[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+/* Селектор атрибутів [attr*=value] */
+[lang*="uk"] {
+    font-family: Arial, sans-serif;
+}
+
+/* Селектор атрибутів [attr=value] */
+[alt="Крем PureSkin"] {
+    border: 3px solid #8B008B;
+}
+
+/* ====================== ПСЕВДОКЛАСИ ====================== */
+
+/* :first-child */
+nav ul li:first-child a {
+    color: green;
+}
+
+/* :last-child */
+nav ul li:last-child a {
+    color: darkred;
+}
+
+/* :active */
+a:active {
+    color: red;
+}
+
+/* :link */
+a:link {
+    text-decoration: none;
+}
+
+/* :empty */
+p:empty {
+    background-color: #eee;
+    min-height: 20px;
+}
+
+/* :not(selector) */
+p:not(.news-date) {
+    color: #333;
+}
+
+/* :checked — якщо буде форма */
+input[type="checkbox"]:checked {
+    outline: 2px solid green;
+}
+
+/* ====================== ПСЕВДОЕЛЕМЕНТИ ====================== */
+
+p::first-line {
+    color: #800000;
+}
+
+p::first-letter {
+    font-size: 140%;
+    color: #FF4500;
+}
+
+/* ====================== ЗАГОЛОВКИ ТА НАВІГАЦІЯ ====================== */
+
+h1 {
+    color: #8B008B;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 2.5em;
+    position: relative;
+    background: linear-gradient(120deg, transparent, rgba(139, 0, 139, 0.1) 50%, transparent);
+}
+
+h1 mark {
+    background: none;
+    color: #FF69B4;
+    position: relative;
+}
+
+h1 mark::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #8B008B, #FF69B4);
+}
+
+nav {
+    background: linear-gradient(to right, #8B008B, #800080);
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ====================== ПОЗИЦІОНУВАННЯ ====================== */
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+aside.side-news {
+    float: right;
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-left: 2px solid #8B008B;
+}
+
+/* ====================== ОСНОВНИЙ КОНТЕНТ ====================== */
+
+body {
+    background-color: #FFF5EE;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+.news-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+}
+
+article {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none !important;
+}
+
+#promo {
+    background: linear-gradient(135deg, #FFF8DC, #FFF5EE);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #8B008B;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ====================== ФОН І КОЛЬОРИ ====================== */
+
+body {
+    color: #000;
+    background-color: #FFF5EE;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    background-attachment: scroll;
+    background-position: top;
+}
+
+/* ====================== ДОДАТКОВІ ЕЛЕМЕНТИ ====================== */
+
+h2 {
+    color: #8B008B;
+    font-size: 1.8em;
+    margin: 20px 0 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #8B008B, #FF69B4);
+}
+
+.side-news {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.side-news h3 {
+    color: #8B008B;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF69B4;
+}
+
+time {
+    color: #666;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+span {
+    color: #8B008B;
+    font-weight: 500;
+}
+
+#extra-info {
+    background: #F8F4FF;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+footer.main-footer {
+    background: linear-gradient(to right, #8B008B, #800080);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================== АДАПТИВНИЙ ДИЗАЙН ====================== */
+@media (max-width: 768px) {
+    .news-section {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    .side-news {
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+/* ====================== АНІМАЦІЇ ====================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+article, .side-news {
+    animation: fadeIn 0.6s ease-out forwards;
+}

@@ -1,0 +1,140 @@
+/* ====================== ЗАГАЛЬНІ СТИЛІ ====================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #002057;
+    color: #FFF5EE;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ====================== ЗАГОЛОВОК І MARQUEE ====================== */
+.marquee-info {
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.marquee-info h1 {
+    color: #FFD700;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav h1 {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+nav h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+/* ====================== МЕНЮ ====================== */
+nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.menu-list li {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-list li:hover {
+    transform: translateX(10px);
+}
+
+.menu-list a {
+    color: #FFF5EE;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    display: block;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-list a:hover {
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    color: #FFD700;
+}
+
+/* Заміна nobr на span з white-space: nowrap */
+.nav-end {
+    text-align: center;
+    margin-top: 30px;
+    color: #FFD700;
+    font-style: italic;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* ====================== АНІМАЦІЇ ====================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* ====================== АДАПТИВНИЙ ДИЗАЙН ====================== */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .marquee-info h1 {
+        font-size: 1.5em;
+    }
+
+    nav h1 {
+        font-size: 1.5em;
+    }
+
+    .menu-list {
+        gap: 10px;
+    }
+
+    .menu-list a {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+}

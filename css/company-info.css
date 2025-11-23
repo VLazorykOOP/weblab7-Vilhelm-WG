@@ -1,0 +1,300 @@
+/* ====================== ЗАГАЛЬНІ СТИЛІ ====================== */
+:root {
+    --primary-color: #002057;
+    --accent-color: #FFD700;
+    --text-color: #FFF5EE;
+    --hover-color: rgba(255, 215, 0, 0.2);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-color), #001440);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ====================== НАВІГАЦІЯ ====================== */
+nav:first-of-type {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav:last-of-type {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ====================== ЗАГОЛОВКИ ====================== */
+h1 {
+    color: var(--accent-color);
+    font-size: 28px;
+    margin: 30px 0 25px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+/* ====================== СПИСКИ ====================== */
+/* Нумерований список (список товарів) */
+.orderlist {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 25px 40px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color) !important; /* Перевизначаємо inline стиль */
+}
+
+.orderlist::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
+}
+
+.orderlist li {
+    color: var(--text-color);
+    padding: 12px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.orderlist li:hover {
+    transform: translateX(10px);
+    padding-left: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05));
+}
+
+/* Ненумерований список (контактна інформація) */
+.orderlist-2 {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 40px;
+    border-radius: 12px;
+    margin: 25px 0;
+    list-style-type: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.orderlist-2 li {
+    color: var(--text-color);
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 3px solid var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+
+.orderlist-2 li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* ====================== СПИСОК ВИЗНАЧЕНЬ ====================== */
+dl {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 30px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+dt {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+    position: relative;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+}
+
+dt:hover {
+    transform: translateX(5px);
+}
+
+dt::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+dd {
+    margin: 10px 0 20px 20px;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+dd:hover {
+    background: rgba(255, 215, 0, 0.05);
+    transform: translateX(5px);
+}
+
+/* ====================== АНІМАЦІЇ ====================== */
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    20%, 100% { transform: translateX(100%); }
+}
+
+/* ====================== АДАПТИВНИЙ ДИЗАЙН ====================== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .orderlist,
+    .orderlist-2,
+    dl {
+        padding: 20px;
+        margin: 15px 0;
+    }
+    
+    dd {
+        margin-left: 15px;
+        padding: 10px;
+    }
+    
+    dt {
+        font-size: 18px;
+    }
+}
+
+/* ====================== ДОДАТКОВІ ЕФЕКТИ ====================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Стилі для div всередині nav */
+nav div {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Прибираємо атрибут compact за допомогою CSS */
+ul[compact] {
+    line-height: 1.2;
+    margin: 0.5em 0;
+}
+
+/* Стилі для посилань в залежності від поточної сторінки */
+nav ul li a[href="company-info.html"] {
+    color: var(--accent-color);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

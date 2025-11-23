@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Товари BeautyLine — Таблиці</title>
+	<link rel="stylesheet" href="css/table-product.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="lab1-part1.html">Про автора</a></li>
+			<li><a href="lab1-part2.html">Головна</a></li>
+			<li><a href="lab1-part3.html">Новини</a></li>
+			<li><a href="company-info.html">Інформація</a></li>
+			<li><a href="menu.html">Меню</a></li>
+		</ul>
+	</nav>
+
+	<main class="container">
+		<header class="page-title">
+			<h1>Каталог товарів BeautyLine</h1>
+			<p class="small">Приклад таблиць з інформацією про товари підприємства (варіант — придуманий)</p>
+		</header>
+
+		<section class="table-wrap">
+			<div class="caption"><strong>Таблиця 1.</strong> Основні характеристики продукції</div>
+			<div class="responsive-table">
+				<table class="products" aria-describedby="prod-desc">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Назва</th>
+							<th>Категорія</th>
+							<th>Бренд</th>
+							<th>Ціна</th>
+							<th>Термін (міс.)</th>
+							<th>Наявність</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>PureSkin Day Cream</td>
+							<td>Крем для обличчя</td>
+							<td>PureSkin</td>
+							<td class="price">380 грн</td>
+							<td>24</td>
+							<td><span class="badge stock-ok">В наявності</span></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Glamour Velvet</td>
+							<td>Помада</td>
+							<td>Glamour</td>
+							<td class="price">210 грн</td>
+							<td>36</td>
+							<td><span class="badge stock-ok">В наявності</span></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>SmoothCover Foundation</td>
+							<td>Тональний крем</td>
+							<td>SmoothCover</td>
+							<td class="price">450 грн</td>
+							<td>18</td>
+							<td><span class="badge stock-low">Мало</span></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>PureSkin Night Serum</td>
+							<td>Сироватка</td>
+							<td>PureSkin</td>
+							<td class="price">520 грн</td>
+							<td>12</td>
+							<td><span class="badge stock-ok">В наявності</span></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>Glamour Lip Care</td>
+							<td>Бальзам для губ</td>
+							<td>Glamour</td>
+							<td class="price">150 грн</td>
+							<td>30</td>
+							<td><span class="badge stock-ok">В наявності</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="summary" id="prod-desc" role="region" aria-labelledby="summary-title">
+				<h3 id="summary-title" style="margin:0 0 8px;color:var(--accent-color)">Коротке резюме</h3>
+				<p class="small">У таблиці наведено умовний перелік товарів BeautyLine з базовими характеристиками — назва, категорія, бренд, орієнтовна ціна, термін придатності та індикатор наявності. Ви можете додати додаткові стовпці (наприклад, склад, вага, рейтинг) згідно вимог проекту.</p>
+			</div>
+		</section>
+
+		<section class="table-wrap" style="margin-top:22px">
+			<div class="caption"><strong>Таблиця 2.</strong> Детальні параметри та склад</div>
+			<div class="responsive-table">
+				<table class="products">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Назва</th>
+							<th>Склад (основні інгредієнти)</th>
+							<th>Вага / Об'єм</th>
+							<th>Рекомендації</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>PureSkin Day Cream</td>
+							<td>Гіалурон, Віт. E, екстракт ромашки</td>
+							<td>50 мл</td>
+							<td>Для нормальної та сухої шкіри</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Glamour Velvet</td>
+							<td>Масло каріте, воски, мінеральні пігменти</td>
+							<td>4 г</td>
+							<td>Щоденне використання</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>SmoothCover Foundation</td>
+							<td>Силіконова база, пудра, SPF 15</td>
+							<td>30 мл</td>
+							<td>Наносити рівномірно, підходить для комбінованої шкіри</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>PureSkin Night Serum</td>
+							<td>Ретинол (низька концентрація), пептиди, гліцерин</td>
+							<td>30 мл</td>
+							<td>Використовувати ввечері, уникати сонця</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>Glamour Lip Care</td>
+							<td>Бджолиний віск, олія жожоба, віт. E</td>
+							<td>8 мл</td>
+							<td>Підтримка зволоження губ</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+	</main>
+</body>
+</html>
