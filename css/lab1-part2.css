@@ -267,7 +267,7 @@ abbr {
     bottom: 10px;
     right: 10px;
     background-color: #1a1a2e;
-    border: 2px solid #00FFFF;
+    border: 2px solid #8B008B;
     padding: 15px;
     border-radius: 8px;
     max-width: 350px;
@@ -283,8 +283,8 @@ abbr {
     margin: 6px 0;
     padding: 7px 10px;
     background-color: rgba(0, 255, 255, 0.1);
-    border-left: 3px solid #FFD700;
-    color: #00FFFF;
+    border-left: 3px solid #8B008B;
+    color: #FFF5EE;
     border-radius: 3px;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -293,7 +293,7 @@ abbr {
 
 .text-message-item:hover {
     background-color: rgba(0, 255, 255, 0.2);
-    border-left-color: #FFC700;
+    border-left-color: #8B008B;
 }
 
 /* Скролбар для блоків повідомлень */
@@ -309,13 +309,13 @@ abbr {
 
 #message-box::-webkit-scrollbar-thumb,
 #text-message-box::-webkit-scrollbar-thumb {
-    background: #FFD700;
+    background: #8B008B;
     border-radius: 4px;
 }
 
 #message-box::-webkit-scrollbar-thumb:hover,
 #text-message-box::-webkit-scrollbar-thumb:hover {
-    background: #FFC700;
+    background: #8B008B;
 }
 
 /* ====================== АНІМАЦІЇ ====================== */
