@@ -250,21 +250,60 @@ strike {
     border-left-color: #FFD700;
 }
 
-/* Скролбар для блока повідомлень */
-#message-box::-webkit-scrollbar {
+/* ====================== БЛОК ПОВІДОМЛЕНЬ ТЕКСТОВИХ ЕЛЕМЕНТІВ ====================== */
+#text-message-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #1a1a2e;
+    border: 2px solid #00FFFF;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 350px;
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 9999;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    box-shadow: 0 4px 6px rgba(0, 255, 255, 0.2);
+}
+
+.text-message-item {
+    margin: 6px 0;
+    padding: 7px 10px;
+    background-color: rgba(0, 255, 255, 0.1);
+    border-left: 3px solid #FFD700;
+    color: #00FFFF;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10px;
+}
+
+.text-message-item:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-left-color: #FFC700;
+}
+
+/* Скролбар для блоків повідомлень */
+#message-box::-webkit-scrollbar,
+#text-message-box::-webkit-scrollbar {
     width: 8px;
 }
 
-#message-box::-webkit-scrollbar-track {
+#message-box::-webkit-scrollbar-track,
+#text-message-box::-webkit-scrollbar-track {
     background: #002057;
 }
 
-#message-box::-webkit-scrollbar-thumb {
+#message-box::-webkit-scrollbar-thumb,
+#text-message-box::-webkit-scrollbar-thumb {
     background: #FFD700;
     border-radius: 4px;
 }
 
-#message-box::-webkit-scrollbar-thumb:hover {
+#message-box::-webkit-scrollbar-thumb:hover,
+#text-message-box::-webkit-scrollbar-thumb:hover {
     background: #FFC700;
 }
 
