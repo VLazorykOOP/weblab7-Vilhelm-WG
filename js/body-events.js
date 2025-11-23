@@ -16,7 +16,7 @@ function showMessage(message) {
     messageBox.appendChild(messageItem);
     
     // Автоматичне видалення старих повідомлень (максимум 10)
-    if (messageBox.children.length > 10) {
+    if (messageBox.children.length > 3) {
         messageBox.removeChild(messageBox.firstChild);
     }
     
