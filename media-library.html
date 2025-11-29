@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Моя Медіа-Бібліотека</title>
+  <link rel="stylesheet" href="css/media-library.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Моя Медіа-Бібліотека</h1>
+      <p class="subtitle">Ви самі додаєте вміст. Меню реалізовано через форму.</p>
+    </header>
+
+    <section class="library">
+      <aside class="menu">
+        <form id="libraryMenu" aria-label="Меню бібліотеки">
+          <fieldset>
+            <legend>Оберіть тип медіа</legend>
+
+            <label><input type="radio" name="mediaType" value="audio" checked> Аудіо</label>
+            <label><input type="radio" name="mediaType" value="video"> Відео</label>
+            <label><input type="radio" name="mediaType" value="playlist"> Плейлист</label>
+          </fieldset>
+
+          <fieldset id="audioListField">
+            <legend>Аудіо файли</legend>
+            <!-- Студент замінить value на свої шляхи/файли -->
+            <label><input type="radio" name="mediaItem" value="audio1.mp3" checked> audio1.mp3</label>
+            <label><input type="radio" name="mediaItem" value="audio2.ogg"> audio2.ogg</label>
+            <label><input type="radio" name="mediaItem" value="audio3.webm"> audio3.webm</label>
+          </fieldset>
+
+          <fieldset id="videoListField" hidden>
+            <legend>Відео файли</legend>
+            <label><input type="radio" name="mediaItem" value="video1.mp4"> video1.mp4</label>
+            <label><input type="radio" name="mediaItem" value="video2.webm"> video2.webm</label>
+          </fieldset>
+
+          <div class="controls">
+            <button type="button" id="loadBtn">Load</button>
+            <button type="button" id="playBtn">Play</button>
+            <button type="button" id="pauseBtn">Pause</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="viewer" aria-live="polite">
+        <div class="media-area">
+          <!-- Audio element with <source> elements. Student should replace sources with own files. -->
+          <audio id="audioPlayer" controls>
+            <source id="audioSourceMp3" src="" type="audio/mpeg">
+            <source id="audioSourceOgg" src="" type="audio/ogg">
+            Your browser does not support the audio element.
+          </audio>
+
+          <!-- Video element with multiple <source> fallbacks -->
+          <video id="videoPlayer" controls width="640" height="360" hidden>
+            <source id="videoSourceMp4" src="" type="video/mp4">
+            <source id="videoSourceWebm" src="" type="video/webm">
+            Your browser does not support the video element.
+          </video>
+
+          <!-- Simple playlist area (student can expand) -->
+          <div id="playlist" hidden>
+            <p>Плейлист: додайте свої елементи у форму у лівому меню.</p>
+          </div>
+        </div>
+
+        <div class="info">
+          <h2>Інформація про файл</h2>
+          <pre id="meta">Нічого не завантажено.</pre>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <p>Зразок реалізації — використано теги <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> та <code>&lt;source&gt;</code>.</p>
+    </footer>
+  </main>
+
+  <script src="js/media-library.js"></script>
+</body>
+</html>

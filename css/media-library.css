@@ -1,0 +1,90 @@
+/* media-library.css - styled to match the menu example (dark theme with gold accents) */
+*{ box-sizing: border-box; }
+body {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	background-color: #002057;
+	color: #FFF5EE;
+	margin: 0;
+	padding: 20px;
+	min-height: 100vh;
+}
+
+.container{
+	max-width: 1150px;
+	margin: 0 auto;
+}
+
+header h1{
+	color: #FFD700;
+	margin: 0 0 6px 0;
+	font-size: 2rem;
+}
+.subtitle{
+	color: rgba(255,255,255,0.85);
+	margin-bottom: 18px;
+}
+
+.library{
+	display: flex;
+	gap: 18px;
+	align-items: flex-start;
+}
+
+.menu{
+	width: 280px;
+	background: rgba(255,255,255,0.04);
+	padding: 18px;
+	border-radius: 12px;
+	border: 1px solid rgba(255,255,255,0.06);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.viewer{
+	flex: 1;
+	background: rgba(255,255,255,0.03);
+	padding: 18px;
+	border-radius: 12px;
+	border: 1px solid rgba(255,255,255,0.06);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.menu fieldset{
+	border: none;
+	padding: 0;
+	margin: 0 0 12px 0;
+}
+
+.menu legend{
+	color: #FFD700;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+label{ display:block; margin:8px 0; color: #FFF5EE; }
+label input{ margin-right:8px; }
+
+.controls{ margin-top:12px; display:flex; gap:10px; }
+.controls button{
+	background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
+	color: #FFF5EE;
+	border: 1px solid rgba(255,215,0,0.12);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all .25s ease;
+}
+.controls button:hover{ background: #FFD700; color: #002057; transform: translateY(-2px); }
+
+.media-area{ display:flex; flex-direction:column; gap:14px; align-items:center; }
+audio, video{ width: 100%; max-width: 720px; border-radius: 6px; background: black; }
+
+.info{ margin-top:12px; background: rgba(255,255,255,0.03); padding:12px; border-radius:8px; color: #FFF5EE; }
+pre#meta{ white-space: pre-wrap; word-break: break-word; margin:0; }
+
+footer{ margin-top:18px; color: rgba(255,255,255,0.6); }
+
+@media (max-width: 900px){
+	.library{ flex-direction: column; }
+	.menu{ width: 100%; }
+	audio, video{ max-width: 100%; }
+}
