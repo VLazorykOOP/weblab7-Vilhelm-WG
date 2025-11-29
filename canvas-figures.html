@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Canvas — Геометричні фігури</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f8; color:#002057; padding:18px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { color:#005f9e; }
+    canvas { background: #ffffff; border: 2px solid #002057; display:block; margin:10px 0; }
+    .controls { margin: 12px 0; }
+    button { background:#005f9e; color:#fff; padding:8px 14px; border:none; border-radius:4px; cursor:pointer; }
+    button:hover { background:#004a7a; }
+    .note { color:#333; font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Canvas — Група геометричних фігур (лабораторна)</h1>
+    <p class="note">Натисніть <strong>Animate</strong>, щоб почати трансформації/переміщення деяких фігур.</p>
+
+    <div class="controls">
+      <button id="animateBtn">Animate</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <canvas id="scene" width="900" height="420" aria-label="Canvas з геометричними фігурами"></canvas>
+
+    <p class="note">Реалізація: кілька кругів, прямокутників, квадратів та поворотний ромб. Деякі фігури анимуються (рух, масштаб, обертання).</p>
+  </div>
+
+  <script src="js/canvas-figures.js"></script>
+</body>
+</html>
